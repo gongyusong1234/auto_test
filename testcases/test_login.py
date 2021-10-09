@@ -34,9 +34,8 @@ class TestLogin(unittest.TestCase):
         self.loginobj.newlogin_button().click()#点击登录注册按钮
         time.sleep(3)
 
-        self.loginobj.phonenum_button().send_keys('10000000006')#输入1 1
+        self.loginobj.phonenum_button().send_keys('1 1')#输入1 1
         self.loginobj.yanzhengma_button().click()#获取验证码
-        self.loginobj.shuru_button().send_keys('0669')
         # self.loginobj.qingchu_button().click()#点击手机号输入框 x
         # self.loginobj.phonenum_button().send_keys(1)  # 输入1
         # self.loginobj.yanzhengma_button().click()  # 获取验证码
