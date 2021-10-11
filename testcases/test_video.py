@@ -1,6 +1,7 @@
 import unittest
 import time
 from appium import webdriver
+import sys
 from config.wddriver import desired_caps
 from page.videotab import Video_hall
 
@@ -58,19 +59,18 @@ class TestVideoHall(unittest.TestCase):
 
         # 近期历史记录
         self.videohall.news_list()
-        time.sleep(1)
+
         print('检查近期历史记录')
 
         # 点击创建历史
         self.videohall.mylive_history().click()
-        print('进入创建历史')
 
         # 创建历史列表
         self.videohall.myLive_history_list()
 
         # 创建历史点击返回
         self.videohall.mylive_history_back().click()
-        print('创建历史返回')
+        print('进入创建历史后返回')
 
         # 放映厅发布弹幕
         self.videohall.click_list_one().click()
@@ -95,7 +95,7 @@ class TestVideoHall(unittest.TestCase):
 
         # 全屏模式下操作
         self.videohall.click_move().click()
-        # self.videohall.click_move().click()
+        self.videohall.click_move().click()
         self.videohall.fullScreen_click().click()
 
         time.sleep(2)
