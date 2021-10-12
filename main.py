@@ -5,11 +5,10 @@ import yagmail
 # from common.HTMLTestRunner import HTMLTestRunner
 
 
-
-
-
-#引入测试模块
+# 引入测试模块
 from testcases import test_login
+from testcases import test_video
+
 # from testcases import test_meirituijian
 # from testcases import test_wonderfulguide
 # from testcases import test_lookmovies
@@ -27,14 +26,14 @@ from testcases import test_login
 # from testcases import test_overdue
 
 
-
-#创建测试集
+# 创建测试集
 
 suite = unittest.TestSuite()
 loader = unittest.TestLoader()
-#添加测试用例到测试集
+# 添加测试用例到测试集
 
-suite.addTests(loader.loadTestsFromModule(test_login))#登录页面测试用例
+suite.addTests(loader.loadTestsFromModule(test_login))  # 登录页面测试用例
+suite.addTests(loader.loadTestsFromModule(test_video))  # 放映厅测试用例
 # suite.addTests(loader.loadTestsFromModule(test_meirituijian))#每日推荐用例
 # suite.addTests(loader.loadTestsFromModule(test_wonderfulguide))#精彩导视用例和播放
 # suite.addTests(loader.loadTestsFromModule(test_lookmovies))#继续观看用例
@@ -52,13 +51,9 @@ suite.addTests(loader.loadTestsFromModule(test_login))#登录页面测试用例
 # suite.addTests(loader.loadTestsFromModule(test_overdue))#过期用例
 
 
-#执行测试用例 （调试展示）
+# 执行测试用例 （调试展示）
 runner = unittest.TextTestRunner(verbosity=3)
 runner.run(suite)
-
-
-
-
 
 # now_time = time.strftime("%Y_%m_%d_%H_%M_%S")
 # report_html = "./report/" + now_time + "result.html"
@@ -72,4 +67,3 @@ runner.run(suite)
 #     )
 # runner.run(suite)
 # fp.close()
-
