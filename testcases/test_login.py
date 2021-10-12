@@ -4,12 +4,13 @@ from appium import webdriver
 
 from config.wddriver import desired_caps
 from page.login import Dmo
-# from pageobjects.shouye import Shouye
+from page.fristhome import HomePage
+
 
 
 
 #登录
-# @ddt
+
 class TestLogin(unittest.TestCase):
     """登录模块"""
 
@@ -17,7 +18,7 @@ class TestLogin(unittest.TestCase):
 
         ios_driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
         self.loginobj = Dmo(ios_driver)
-        # self.shouyeobj = Shouye(ios_driver)
+        self.homeobj = HomePage(ios_driver)
 
 
 
@@ -57,12 +58,12 @@ class TestLogin(unittest.TestCase):
         # time.sleep(2)
         # self.loginobj.shuru_button().send_keys('0669')#输入正确的验证码
         # print('登录成功')
-        # time.sleep(10)
-        # self.shouyeobj.shouye_button()  # 首页首页键显示
-        # self.shouyeobj.sousuo_button()  # 首页搜索展示
-        # self.shouyeobj.jingcai_button()  # 首页精彩展示
-        # self.shouyeobj.yingping_button()  # 首页影评展示
-        # self.shouyeobj.gengduo_button()  # 首页更多展示
+        time.sleep(10)
+        self.homeobj.firstpage_button()  # 首页首页键显示
+        self.homeobj.seek_button()  # 首页搜索展示
+        self.homeobj.becoming_button()# 首页即将上线展示
+        self.homeobj.videohall_button()  # 首页放映厅展示
+
 
 
 

@@ -34,10 +34,3 @@ class Seek:
     # 搜索出来第一个影片的按钮
     def fristseekmovie_button(self):
         self.driver.tap([(62,140)])
-
-    # 点我反馈
-    def clickmetalk_button(self):
-        return self.adc.get_element('SeekPage', 'clickmetalk')
-    #敬请期待
-    def talksucceed_button(self):
-        return self.adc.get_element('SeekPage', 'talksucceed')

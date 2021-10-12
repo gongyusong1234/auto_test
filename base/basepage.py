@@ -24,8 +24,11 @@ class FindElement(object):
             elif by == 'xpath':
                 WebDriverWait(self.driver, 10, 0.1).until(lambda dv: self.driver.find_element_by_xpath(value))
                 return self.driver.find_element_by_xpath(value)
-            elif by == 'tap':
-                return self.driver.tap([value])
+            #废弃 应该是转化的时候数字变了类型说的  如果是点击的 那就直接写在页面里面了
+            # elif by == 'tap':
+            #     print(value,2222)
+            #     self.driver.tap(value)
+
             else:
                 return self.driver.find_element_by_xpath(value)
         except:

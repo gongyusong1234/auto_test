@@ -7,13 +7,13 @@ class MovieDetails:
 
     #一拳超人详情页概要
     def yqcrtitle_button(self):
-        return self.adc.get_element('MovieDetails','yqcrdetail')
+        return self.adc.get_element('MovieDetails','yqcrtitle')
     #白鹿原详情页概要
     def blytitle_button(self):
-        return self.adc.get_element('MovieDetails','blydetail')
+        return self.adc.get_element('MovieDetails','blytitle')
     #斯巴达克斯详情页概要
     def sbdkstitle_button(self):
-        return self.adc.get_element('MovieDetails','sbdksdetail')
+        return self.adc.get_element('MovieDetails','sbdkstitle')
     #详情页 x 键
     def close_button(self):
         return self.adc.get_element('MovieDetails','close')
