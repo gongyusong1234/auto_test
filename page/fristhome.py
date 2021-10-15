@@ -14,7 +14,7 @@ class HomePage:
     # 底导搜索按钮
     def seek_button(self):
         return self.adc.get_element('HomePage', 'seek')
-    #底导 即将上下
+    #底导 即将上线
     def becoming_button(self):
         return self.adc.get_element('HomePage', 'becoming')
     #底导放映厅
