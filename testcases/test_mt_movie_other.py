@@ -1,7 +1,8 @@
-
+import os
 import unittest
 import time
 from appium import webdriver
+import sys
 from config.wddriver import desired_caps
 from page.fristhome import HomePage
 from page.little_video import Little_Video
@@ -15,7 +16,7 @@ from page.video import Video
 
 class Test_My_Movie_Other(unittest.TestCase):
     """
-    我的片单 精彩小视频
+    我的片单
     """
 
     def setUp(self):

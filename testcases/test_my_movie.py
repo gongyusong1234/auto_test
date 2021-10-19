@@ -1,6 +1,7 @@
 import unittest
 import time
 from appium import webdriver
+import sys
 from config.wddriver import desired_caps
 from page.fristhome import HomePage
 from page.movie_detail import Movie_Detail
@@ -11,9 +12,7 @@ from page.video import Video
 
 
 class Test_My_Movie(unittest.TestCase):
-    """
-    我的片单每日推荐
-    """
+    """我的片单"""
 
     def setUp(self):
         ios_driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
