@@ -14,9 +14,9 @@ from page.my_movie import My_Movie
 from page.video import Video
 
 
-class Test_My_Movie_Other(unittest.TestCase):
+class Test_My_Movie_Detail(unittest.TestCase):
     """
-    我的片单 精彩小视频
+    我的片单 详情页
     """
 
     def setUp(self):
@@ -29,6 +29,7 @@ class Test_My_Movie_Other(unittest.TestCase):
         self.play = Video(ios_driver)
         self.litvideo = Little_Video(ios_driver)
         self.loginobj = Dmo(ios_driver)
+        self.mvdetail = Movie_Detail(ios_driver)
 
     def isok(self,moviename,movename,a):
 
@@ -54,15 +55,15 @@ class Test_My_Movie_Other(unittest.TestCase):
         我的片单具体执行用例
         """
         time.sleep(2)
-        print('点击精彩推荐 进入小视频播放页')
-        self.home.wonderfulrecommend_button().click()
+        print('点击每日推荐详情 进入详情页')
+        self.home.details_button().click()
 
         print('点击加入片单')
         time.sleep(5)
-        self.litvideo.add_coollect().click()
 
+        self.mvdetail.joincoollect().click()
         print('点击播放 进入播放器获取影片信息')
-        self.litvideo.video_play().click()
+        self.mvdetail.play().click()
         time.sleep(5)
         self.play.click_movie().click()
 
@@ -70,10 +71,9 @@ class Test_My_Movie_Other(unittest.TestCase):
         print('添加的影片信息:' + moviename)
         time.sleep(0.5)
         self.play.movie_back().click()
-        # self.litvideo.video_close().click()
         time.sleep(1)
         print('到我的片单页查看已加入片单')
-        self.litvideo.video_close().click()
+        self.mvdetail.detail_close().click()
 
         print('进入个人页')
         self.home.my_home().click()
@@ -89,12 +89,7 @@ class Test_My_Movie_Other(unittest.TestCase):
     def test_1(self):
 
         self.case1(0)
-        print('再次进入精彩导视 移除片单')
+        print('再次进入详情页 移除片单')
         self.case1(1)
 
-        print('进入影片详情页')
-
-        print('点击加入片单')
-
-        print('到我的片单页查看')
 

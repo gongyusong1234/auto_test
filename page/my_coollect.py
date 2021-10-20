@@ -18,4 +18,16 @@ class My_Coollect:
     def first_move_other(self):
         return self.find.get_element('My_Coollect', 'first_move_other').text
 
+    # 清空
+    def clear(self):
+        return self.find.get_element('My_Coollect', 'clear_button')
+
+    # 展位图展示
+    def no_list(self):
+        return self.find.get_element('My_Coollect', 'no_list').is_displayed()
+
+    # 清空
+    def isclear(self):
+        return self.find.get_element('My_Coollect', 'is_clear')
+
 

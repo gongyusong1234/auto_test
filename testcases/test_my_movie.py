@@ -12,7 +12,9 @@ from page.video import Video
 
 
 class Test_My_Movie(unittest.TestCase):
-    """我的片单"""
+    """
+    我的片单每日推荐
+    """
 
     def setUp(self):
         ios_driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
