@@ -14,6 +14,16 @@ class Movie_Detail:
     def detail_close(self):
         return self.find.get_element('MovieDetails', 'close')
 
+    # 详情页点击片单
+    def joincoollect(self):
+        return self.find.get_element('MovieDetails', 'joincoollect')
+
+    # 点击播放
+    def play(self):
+        return self.find.get_element('MovieDetails', 'play')
+
+
+
 
 
 

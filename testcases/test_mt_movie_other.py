@@ -16,7 +16,7 @@ from page.video import Video
 
 class Test_My_Movie_Other(unittest.TestCase):
     """
-    我的片单
+    我的片单 精彩小视频
     """
 
     def setUp(self):
