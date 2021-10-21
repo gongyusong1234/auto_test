@@ -4,25 +4,20 @@ from appium import webdriver
 
 from config.wddriver import desired_caps
 from page.login import Dmo
+
+
 # from pageobjects.shouye import Shouye
 
 
-
-#登录
+# 登录
 # @ddt
 class TestLogin(unittest.TestCase):
     """登录模块"""
 
     def setUp(self):
-
         ios_driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
         self.loginobj = Dmo(ios_driver)
         # self.shouyeobj = Shouye(ios_driver)
-
-
-
-
-
 
     def test_1(self):
         """
@@ -31,12 +26,15 @@ class TestLogin(unittest.TestCase):
         """
 
         time.sleep(5)
-        self.loginobj.newlogin_button().click()#点击登录注册按钮
-        time.sleep(3)
-
-        self.loginobj.phonenum_button().send_keys('10000000006')#输入1 1
-        self.loginobj.yanzhengma_button().click()#获取验证码
-        self.loginobj.shuru_button().send_keys('0669')
+        self.loginobj.onelogin_button().click() # 点击一键登录
+        # self.loginobj.replace_button().click()  # 点击更换手机号按钮
+        time.sleep(5)
+        # self.loginobj.newlogin_button().click()  # 点击登录注册按钮
+        # time.sleep(3)
+        #
+        # self.loginobj.phonenum_button().send_keys('10000000006')  # 输入1 1
+        # self.loginobj.yanzhengma_button().click()  # 获取验证码
+        # self.loginobj.shuru_button().send_keys('0669')
         # self.loginobj.qingchu_button().click()#点击手机号输入框 x
         # self.loginobj.phonenum_button().send_keys(1)  # 输入1
         # self.loginobj.yanzhengma_button().click()  # 获取验证码
@@ -59,9 +57,5 @@ class TestLogin(unittest.TestCase):
         # self.shouyeobj.yingping_button()  # 首页影评展示
         # self.shouyeobj.gengduo_button()  # 首页更多展示
 
-
-
-
-
-    def tearDown(self):
-        self.loginobj.driver.close_app()
+    # def tearDown(self):
+    #     self.loginobj.driver.close_app()
