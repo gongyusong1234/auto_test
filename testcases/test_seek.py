@@ -1,11 +1,10 @@
 import unittest
 import time
 from appium import webdriver
-import sys
 from config.wddriver import desired_caps
 from page.seek import Seek
 from page.fristhome import HomePage
-from page.moviedetail import MovieDetails
+from page.movie_detail import Movie_Detail
 
 
 class TestSeek(unittest.TestCase):
@@ -15,7 +14,7 @@ class TestSeek(unittest.TestCase):
         ios_driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
         self.seekobj = Seek(ios_driver)
         self.homeobj = HomePage(ios_driver)
-        self.mvobj = MovieDetails(ios_driver)
+        self.mvobj = Movie_Detail(ios_driver)
 
     # 搜索框搜索电视剧季度剧电影
     def test_1(self):
