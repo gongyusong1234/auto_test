@@ -1,5 +1,11 @@
 import unittest
+
 from appium import webdriver
+
+import time
+from appium import webdriver
+import sys
+
 from config.wddriver import desired_caps
 from page.fristhome import HomePage
 from page.movie_detail import Movie_Detail

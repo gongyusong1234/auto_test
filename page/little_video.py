@@ -11,7 +11,7 @@ class Little_Video:
         self.driver = driver
         self.find = FindElement(driver)
 
-    # 关闭
+    # 关闭git diff
     def video_close(self):
         return self.find.get_element('little_video','video_close')
 

@@ -33,7 +33,7 @@ class FindElement(object):
                 return self.driver.find_element_by_xpath(value)
         except:
             print('\nby是=======>',by,'\nvalue是========>',value)
-
+            self.driver.save_screenshot(os.path.join(os.path.join(os.path.dirname(os.getcwd()),'Image'),'%s.jpg'%value))
             return None
 
 

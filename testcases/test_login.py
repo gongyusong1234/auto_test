@@ -4,12 +4,17 @@ from appium import webdriver
 
 from config.wddriver import desired_caps
 from page.login import Dmo
+
 # from pageobjects.shouye import Shouye
+
+from page.fristhome import HomePage
+
+
 
 
 
 #登录
-# @ddt
+
 class TestLogin(unittest.TestCase):
     """登录模块"""
 
@@ -18,6 +23,7 @@ class TestLogin(unittest.TestCase):
         ios_driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
         self.loginobj = Dmo(ios_driver)
         # self.shouyeobj = Shouye(ios_driver)
+        self.homeobj = HomePage(ios_driver)
 
 
 
@@ -37,6 +43,17 @@ class TestLogin(unittest.TestCase):
         self.loginobj.phonenum_button().send_keys('10000000006')#输入1 1
         self.loginobj.yanzhengma_button().click()#获取验证码
         self.loginobj.shuru_button().send_keys('0669')
+        # self.loginobj.newlogin_button().click()#点击登录注册按钮
+        time.sleep(3)
+
+        self.loginobj.phonenum_button().send_keys('10000000006')#输入1 1
+        time.sleep(1)
+        self.loginobj.yanzhengma_button().click()#获取验证码
+        time.sleep(1)
+        self.loginobj.shuru_button().click()
+        time.sleep(1)
+        self.loginobj.shuru_button().send_keys('0669')
+        time.sleep(5)
         # self.loginobj.qingchu_button().click()#点击手机号输入框 x
         # self.loginobj.phonenum_button().send_keys(1)  # 输入1
         # self.loginobj.yanzhengma_button().click()  # 获取验证码
@@ -58,6 +75,13 @@ class TestLogin(unittest.TestCase):
         # self.shouyeobj.jingcai_button()  # 首页精彩展示
         # self.shouyeobj.yingping_button()  # 首页影评展示
         # self.shouyeobj.gengduo_button()  # 首页更多展示
+        time.sleep(10)
+        self.homeobj.firstpage_button()  # 首页首页键显示
+        self.homeobj.seek_button()  # 首页搜索展示
+        self.homeobj.becoming_button()# 首页即将上线展示
+        self.homeobj.videohall_button()  # 首页放映厅展示
+
+
 
 
 

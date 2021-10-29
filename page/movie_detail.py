@@ -22,6 +22,7 @@ class Movie_Detail:
     def play(self):
         return self.find.get_element('MovieDetails', 'play')
 
+
     # 一拳超人详情页概要
     def yqcrtitle_button(self):
         return self.adc.get_element('MovieDetails', 'yqcrdetail')

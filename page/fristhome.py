@@ -58,4 +58,8 @@ class HomePage:
         return self.adc.get_element('HomePage', 'mymoviecollect')
     # 我的
     def my_home(self):
+
         return self.adc.get_element('HomePage','my_home')
+
+        return self.adc.get_element('HomePage', 'my_home')
+

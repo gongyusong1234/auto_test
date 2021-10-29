@@ -1,5 +1,9 @@
 import unittest
 import time
+
+
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+
 from appium import webdriver
 from config.wddriver import desired_caps
 from page.movie_player import Movie_Player
